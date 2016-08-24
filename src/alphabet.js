@@ -1,0 +1,43 @@
+const alphabet = {
+  a: [ "Alpha",     "AL FAH" ],
+  b: [ "Bravo",     "BRAH VOH" ],
+  c: [ "Charlie",   "CHAR LEE" ],
+  d: [ "Delta",     "DELL TAH"],
+  e: [ "Echo",      "ECK OH" ],
+  f: [ "Foxtrot",   "FOKS TROT" ],
+  g: [ "Golf",      "GOLF" ],
+  h: [ "Hotel",     "HOH TELL" ],
+  i: [ "India",     "IN DEE AH" ],
+  j: [ "Juliett",   "JEW LEE ETT" ],
+  k: [ "Kilo",      "KEY LOH" ],
+  l: [ "Lima",      "LEE MAH" ],
+  m: [ "Mike",      "MIKE" ],
+  n: [ "November",  "NO VEM BER" ],
+  o: [ "Oscar",     "OSS CUR" ],
+  p: [ "Papa",      "PAH PAH" ],
+  q: [ "Quebec",    "KEH BECK" ],
+  r: [ "Romeo",     "ROW ME OH" ],
+  s: [ "Sierra",    "SEE AIR RAH" ],
+  t: [ "Tango",     "TANG OH" ],
+  u: [ "Uniform",   "YOU NEE FORM" ],
+  v: [ "Victor",    "VIK TAH" ],
+  w: [ "Whiskey",   "WISS KEY" ],
+  x: [ "X-Ray",     "ECKS RAY" ],
+  y: [ "Yankee",    "YANG KEY" ],
+  z: [ "Zulu",      "ZOO LOO" ],
+
+  1: [ "UNAONE",      "OO-NAH-WUN" ],
+  2: [ "BISSOTWO",    "BEES-SOH-TOO" ],
+  3: [ "TERRATHREE",  "TAY-RAH-TREE" ],
+  4: [ "KARTEFOUR",   "KAR-TAY-FOWER" ],
+  5: [ "PANTAFIVE",   "PAN-TAH-FIVE" ],
+  6: [ "SOXISIX",     "SOK-SEE-SIX" ],
+  7: [ "SETTESEVEN",  "SAY-TAY-SEVEN" ],
+  8: [ "OKTOEIGHT",   "OK-TOH-AIT" ],
+  9: [ "NOVENINE",    "NO-VAY-NINER" ],
+  0: [ "NADAZERO",    "NAH-DAH-ZAY-ROH" ],
+
+  ".": ["STOP", "STOP"]
+};
+
+export default alphabet;

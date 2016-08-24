@@ -1,0 +1,17 @@
+.NatoWord, .OtherText {
+  margin-left: 0.2em;
+  padding: 0.2em;
+  color: #111;
+  display: inline-block;
+}
+
+.NatoWord {
+  font-family: monospace;
+  background: #3D9970;
+}
+
+.OtherText {
+  font-family: serif;
+  border-bottom: dotted #FF4136;
+  background: #ddd;
+}
