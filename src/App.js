@@ -39,9 +39,9 @@ const NatoSentence = (props) => {
     if (value === "") {
       return prev
     } else if (Alphabet.hasOwnProperty(value.toLowerCase())) {
-      return [...prev, (<NatoWord letter={value.toLowerCase()}/>)]
+      return [...prev, <NatoWord letter={value.toLowerCase()}/>]
     } else {
-      return [...prev, (<OtherText text={value}/>)]
+      return [...prev, <OtherText text={value}/>]
     }
   }, [])
   return (sentence.length === 0 ? null : <div>{sentence}</div>)
@@ -50,6 +50,18 @@ NatoSentence.PropTypes = { text: React.PropTypes.string.isRequired }
 NatoSentence.defaultProps = { text: "" }
 
 const NatoWord = (props) => <span className="NatoWord">{Alphabet[props.letter][0]}</span>
-const OtherText = (props) => <span className="OtherText">{props.text.replace(/\s/g, "\u00a0")}</span>
+NatoWord.PropTypes = {
+  letter: React.PropTypes.string.isRequired,
+  pronounce: React.PropTypes.boolean,
+}
+NatoWord.defaultProps = {
+  letter: "",
+  pronounce: false,
+}
+
+const NBSP = "\u00a0"
+const OtherText = (props) => <span className="OtherText">{props.text.replace(/\s/g, NBSP)}</span>
+OtherText.PropTypes = { text: React.PropTypes.string.isRequired }
+OtherText.defaultProps = { text: "" }
 
 export default App;
