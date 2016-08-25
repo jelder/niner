@@ -3,15 +3,16 @@ body {
 }
 
 .Sentence {
-  margin: 2em;
+  margin: 2rem;
   display: block;
 }
 
 .CodeWord, .OtherText {
-  margin: 0.05em;
-  padding: 0.2em;
+  margin: 0.05rem;
+  padding: 0.2rem;
   color: #111;
   display: inline-block;
+  font-weight: 100;
 }
 
 .CodeWord {
@@ -31,8 +32,8 @@ body {
   font-family: monospace;
   color: #111;
   width: 100%;
-  font-size: +1em;
-  min-height: 5em;
+  font-size: +1rem;
+  min-height: 5rem;
   border-style: none;
   border-color: transparent;
   overflow: auto;

@@ -9,7 +9,7 @@ import './index.css';
 import {TextReducer} from './reducers'
 
 let store = createStore(TextReducer, {
-  text: "Make yourself understood!\n\nTranslate any text to the NATO Phonetic Alphabet.\n\n202-456-1111\n\n90.9 FM",
+  text: "\n\nMake yourself understood!\n\nTranslate any text to the NATO Phonetic Alphabet.\n\n202-456-1111\n\n90.9 FM",
   pronunciation: false,
 })
 
