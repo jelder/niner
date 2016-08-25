@@ -1,5 +1,5 @@
 .NatoWord, .OtherText {
-  margin-left: 0.2em;
+  margin: 0.05em;
   padding: 0.2em;
   color: #111;
   display: inline-block;
@@ -12,6 +12,18 @@
 
 .OtherText {
   font-family: serif;
-  border-bottom: dotted #FF4136;
-  background: #ddd;
+  /*border-bottom: dotted #FF4136;*/
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.MainTextarea {
+  font-family: monospace;
+  color: #111;
+  width: 100%;
+  font-size: +1em;
+  min-height: 5em;
+  border-style: none;
+  border-color: transparent;
+  overflow: auto;
 }
