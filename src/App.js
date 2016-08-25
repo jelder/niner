@@ -35,11 +35,17 @@ App.contextTypes = {
 }
 
 const NatoSentence = (props) => {
-  const sentence = props.text.split(/([a-zA-Z0-9])/).reduce((prev, value, index, array) => {
+  const sentence = props.text.split(/([a-zA-Z0-9.])/).reduce((prev, value, index, array) => {
     if (value === "") {
       return prev
     } else if (Alphabet.hasOwnProperty(value.toLowerCase())) {
-      return [...prev, <NatoWord letter={value.toLowerCase()}/>]
+      word = if (array[index-1].match(/\d/)) {
+        
+      } else {
+        <NatoWord letter={value.toLowerCase()}/>
+      }
+
+      return [...prev, word]
     } else {
       return [...prev, <OtherText text={value}/>]
     }
