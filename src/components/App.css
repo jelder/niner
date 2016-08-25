@@ -1,0 +1,56 @@
+.MainTextarea {
+  color: #111;
+  font-family: monospace;
+  width: 100%;
+  font-size: +1rem;
+  min-height: 5rem;
+  border-style: none;
+  border-color: transparent;
+  overflow: auto;
+}
+
+.Result {
+  padding: 1rem;
+}
+
+.Sentence {
+  margin: 2rem;
+  display: block;
+}
+
+.CodeWord, .OtherText {
+  margin: 0.05rem;
+  padding: 0.2rem;
+  color: #111;
+  display: inline-block;
+  font-weight: 100;
+}
+
+.CodeWord {
+  font-family: monospace;
+  color: #fff;
+}
+
+.CodWord em {
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: 900;
+  color: red;
+}
+
+.OtherText {
+  font-family: serif;
+  color: transparent;
+  text-shadow: 3px 3px 2px rgba(0,0,0,0.5);
+}
+
+/* color */
+
+.Result {
+  background: #7FDBFF;
+}
+
+.CodeWord {
+  background: rgb(0, 31, 63);
+  box-shadow: 3px 3px 2px 1px rgba(0, 31, 63, 0.2);
+}

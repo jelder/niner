@@ -12,16 +12,6 @@ body {
   min-height: 100%;
 }
 
-.grid {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.grid > * {
-  flex-basis: 10em;
-  flex-grow: 1;
-}
-
 a, a:hover {
   color: #FF851B
 }
