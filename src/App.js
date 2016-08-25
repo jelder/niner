@@ -11,18 +11,18 @@ var App = React.createClass({
       <div>
         <Textarea
           value={store.text}
-          onChange={this.handleChange}
+          className="MainTextarea"
+          onChange={this.handleTextChange}
           autoFocus={true}
           autoCapitalize="sentences"
-          placeHolder="Type anything"
-          className="MainTextarea"
+          placeholder="Type anything"
           spellCheck={true}/>
-        <Result text={store.text}/>
+        <Result key="result" text={store.text}/>
       </div>
     );
   },
 
-  handleChange: function(event) {
+  handleTextChange: function(event) {
     this.setState(this.context.store.dispatch({
       type: 'CHANGE_TEXT',
       text: event.target.value
@@ -36,7 +36,7 @@ App.contextTypes = {
 }
 
 const Result = (props) => {
-  const result = props.text.split(/\n+|(\. )/).map((text) => <Sentence text={text}/>)
+  const result = props.text.split(/\n+|(\. )/).map((text, index) => <Sentence text={text} key={"sentence_" + index}/>)
   return (result.length === 0 ? null : <div>{result}</div>)
 }
 
@@ -44,10 +44,18 @@ const Sentence = (props) => {
   const sentence = props.text.split(/([a-zA-Z0-9])/).reduce((prev, value, index, array) => {
     if (value === "") {
       return prev
+    } else if (index > 0 && array[index-1].match(/\d/) && value === ".") {
+      return [...prev, <CodeWord {...Alphabet.decimal} key={"codeword_" + index}/>]
+    } else if (Alphabet.hasOwnProperty(value)) {
+      return [...prev, <CodeWord {...Alphabet[value]} key={"codeword_" + index}/>]
     } else if (Alphabet.hasOwnProperty(value.toLowerCase())) {
-      return [...prev, <CodeWord letter={value.toLowerCase()}/>]
+      let props = {
+        ...Alphabet[value.toLowerCase()],
+        codeword: Alphabet[value.toLowerCase()].codeword.toUpperCase()
+      }
+      return [...prev, <CodeWord {...props} key={"codeword_" + index}/>]
     } else {
-      return [...prev, <OtherText text={value}/>]
+      return [...prev, <OtherText text={value} key={"text_" + index}/>]
     }
   }, [])
   return (sentence.length === 0 ? null : <div className="Sentence">{sentence}</div>)
@@ -55,14 +63,11 @@ const Sentence = (props) => {
 Sentence.PropTypes = { text: React.PropTypes.string.isRequired }
 Sentence.defaultProps = { text: "" }
 
-const CodeWord = (props) => <span className="CodeWord">{Alphabet[props.letter][0]}</span>
-CodeWord.PropTypes = {
-  letter: React.PropTypes.string.isRequired,
-  pronounce: React.PropTypes.boolean,
-}
-CodeWord.defaultProps = {
-  letter: "",
-  pronounce: false,
+const CodeWord = (props) => <span className="CodeWord">{props.codeword}</span>
+CodeWord.propTypes = {
+  codeword: React.PropTypes.string.isRequired,
+  faa: React.PropTypes.string,
+  ipa: React.PropTypes.string,
 }
 
 const NBSP = "\u00a0"
