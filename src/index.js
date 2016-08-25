@@ -8,7 +8,11 @@ import './index.css';
 
 import {TextReducer} from './reducers'
 
-let store = createStore(TextReducer, {text: "Look to windward"})
+let store = createStore(TextReducer, {
+  text: "Make yourself understood!\nTranslate any text to the NATO Phonetic Alphabet.",
+  pronunciation: false,
+})
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
