@@ -1,5 +1,6 @@
 import React from 'react';
 import Alphabet from './alphabet';
+import Textarea from 'react-textarea-autosize'
 import './App.css'
 
 var App = React.createClass({
@@ -8,7 +9,7 @@ var App = React.createClass({
     const store = this.context.store.getState();
     return (
       <div>
-        <textarea
+        <Textarea
           value={store.text}
           onChange={this.handleChange}
           autoFocus={true}
