@@ -16,7 +16,7 @@ var App = React.createClass({
           placeHolder="Type anything"
           className="MainTextarea"
           spellCheck={true}/>
-        <NatoSentence text={store.text}/>
+        <Result text={store.text}/>
       </div>
     );
   },
@@ -34,27 +34,32 @@ App.contextTypes = {
   store: React.PropTypes.object
 }
 
-const NatoSentence = (props) => {
+const Result = (props) => {
+  const result = props.text.split(/\n+|(\. )/).map((text) => <Sentence text={text}/>)
+  return (result.length === 0 ? null : <div>{result}</div>)
+}
+
+const Sentence = (props) => {
   const sentence = props.text.split(/([a-zA-Z0-9])/).reduce((prev, value, index, array) => {
     if (value === "") {
       return prev
     } else if (Alphabet.hasOwnProperty(value.toLowerCase())) {
-      return [...prev, <NatoWord letter={value.toLowerCase()}/>]
+      return [...prev, <CodeWord letter={value.toLowerCase()}/>]
     } else {
       return [...prev, <OtherText text={value}/>]
     }
   }, [])
-  return (sentence.length === 0 ? null : <div>{sentence}</div>)
+  return (sentence.length === 0 ? null : <div className="Sentence">{sentence}</div>)
 }
-NatoSentence.PropTypes = { text: React.PropTypes.string.isRequired }
-NatoSentence.defaultProps = { text: "" }
+Sentence.PropTypes = { text: React.PropTypes.string.isRequired }
+Sentence.defaultProps = { text: "" }
 
-const NatoWord = (props) => <span className="NatoWord">{Alphabet[props.letter][0]}</span>
-NatoWord.PropTypes = {
+const CodeWord = (props) => <span className="CodeWord">{Alphabet[props.letter][0]}</span>
+CodeWord.PropTypes = {
   letter: React.PropTypes.string.isRequired,
   pronounce: React.PropTypes.boolean,
 }
-NatoWord.defaultProps = {
+CodeWord.defaultProps = {
   letter: "",
   pronounce: false,
 }

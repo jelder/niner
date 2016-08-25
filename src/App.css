@@ -1,20 +1,30 @@
-.NatoWord, .OtherText {
+body {
+  background: #7FDBFF;
+}
+
+.Sentence {
+  margin: 2em;
+  display: block;
+}
+
+.CodeWord, .OtherText {
   margin: 0.05em;
   padding: 0.2em;
   color: #111;
   display: inline-block;
 }
 
-.NatoWord {
+.CodeWord {
   font-family: monospace;
-  background: #3D9970;
+  background: #001f3f;
+  color: #fff;
+  box-shadow: 3px 3px 2px 1px rgba(0, 31, 63, 0.2);
 }
 
 .OtherText {
   font-family: serif;
-  /*border-bottom: dotted #FF4136;*/
   color: transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  text-shadow: 3px 3px 2px rgba(0,0,0,0.5);
 }
 
 .MainTextarea {
