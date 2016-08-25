@@ -8,7 +8,14 @@ var App = React.createClass({
     const store = this.context.store.getState();
     return (
       <div>
-        <textarea value={store.text} onChange={this.handleChange} cols="100" rows="5"/>
+        <textarea
+          value={store.text}
+          onChange={this.handleChange}
+          autoFocus={true}
+          autoCapitalize="sentences"
+          placeHolder="Type anything"
+          className="MainTextarea"
+          spellCheck={true}/>
         <NatoSentence text={store.text}/>
       </div>
     );
