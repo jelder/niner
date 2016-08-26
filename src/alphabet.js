@@ -1,5 +1,5 @@
 const alphabet = {
-  a: { codeword: "Alpha",       faa: "<strong>al</strong>-fah",           ipa: "/ˈælfɑː/" },
+  a: { codeword: "Alpha",       faa: "<strong>al</strong> fah",           ipa: "/ˈælfɑː/" },
   b: { codeword: "Bravo",       faa: "<strong>brah</strong> voh",         ipa: "/ˌbrɑːˈvoʊ/" },
   c: { codeword: "Charlie",     faa: "<strong>char</strong> lee",         ipa: "/ˈtʃɑːrliː/" },
   d: { codeword: "Delta",       faa: "<strong>dell</strong> tah",         ipa: "/ˈdɛltɑː/" },
