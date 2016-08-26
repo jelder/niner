@@ -3,7 +3,7 @@
   font-family: monospace;
   width: 100%;
   font-size: +1rem;
-  min-height: 5rem;
+  min-height: 20vh;
   border-style: none;
   border-color: transparent;
   overflow: auto;
@@ -13,6 +13,7 @@
 .Result {
   padding: 1rem;
   background: #7FDBFF;
+  min-height: 80vh;
 }
 
 .Sentence {
@@ -41,18 +42,23 @@
   text-shadow: 3px 3px 2px rgba(0,0,0,0.5);
 }
 
+.ModeButtons {
+  background: #7FDBFF;
+  min-height: 10vh;
+}
+
 button {
   font-family: sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
-  color: #111;
+  color: #fff;
   background-color: transparent;
   user-select: none;
   border: none;
 }
 
 button:hover {
-  transform: translateY(0.05rem);
+  transform: translateY(-0.05rem);
 }
 
 button:active {

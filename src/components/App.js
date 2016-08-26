@@ -21,16 +21,18 @@ var UnconnectedApp = React.createClass({
           placeholder="Type anything. The more phonetically ambiguous, the better!"
           spellCheck={true}/>
 
-        <ModeButton mode="codeword">
-          Code Word
-        </ModeButton>
-        <ModeButton mode="faa">
-          Phonetic
-        </ModeButton>
-        <ModeButton mode="ipa">
-          IPA
-        </ModeButton>
-        <Result key="result" text={text} mode={mode}/>
+        <div className="ModeButtons">
+          <ModeButton mode="codeword">
+            Code Word
+          </ModeButton>
+          <ModeButton mode="faa">
+            Phonetic
+          </ModeButton>
+          <ModeButton mode="ipa">
+            IPA
+          </ModeButton>
+          <Result key="result" text={text} mode={mode}/>
+        </div>
 
       </div>
     );
