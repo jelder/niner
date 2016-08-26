@@ -13,15 +13,8 @@ const Sentence = (props) => {
       return prev
     } else if (index > 0 && array[index-1].match(/\d/) && value === ".") { // Say "decimal" rather than "stop" following numerics
       return [...prev, <CodeWord {...Alphabet.decimal} key={"codeword_" + index} mode={props.mode}/>]
-    } else if (Alphabet.hasOwnProperty(value)) {
-      return [...prev, <CodeWord {...Alphabet[value]} key={"codeword_" + index} mode={props.mode}/>]
     } else if (Alphabet.hasOwnProperty(value.toLowerCase())) {
-      let codeWordProps = {
-        ...Alphabet[value.toLowerCase()],
-        codeword: Alphabet[value.toLowerCase()].codeword.toUpperCase(),
-        mode: props.mode,
-      }
-      return [...prev, <CodeWord {...codeWordProps} key={"codeword_" + index}/>]
+      return [...prev, <CodeWord {...Alphabet[value.toLowerCase()]} key={"codeword_" + index} mode={props.mode}/>]
     } else {
       return [...prev, <OtherText text={value} key={"text_" + index}/>]
     }
