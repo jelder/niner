@@ -1,21 +1,21 @@
 import React from 'react'
-import ModeLink from '../containers/ModeLink'
+import ModeButton from '../containers/ModeButton'
 
 const Footer = () => (
   <p>
     Show:
     {" "}
-    <ModeLink filter="codeword">
+    <ModeButton filter="codeword">
       Code Word
-    </ModeLink>
+    </ModeButton>
     {", "}
-    <ModeLink filter="ipa">
+    <ModeButton filter="ipa">
       IPA
-    </ModeLink>
+    </ModeButton>
     {", "}
-    <ModeLink filter="faa">
+    <ModeButton filter="faa">
       FAA
-    </ModeLink>
+    </ModeButton>
   </p>
 )
 

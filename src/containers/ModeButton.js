@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { setMode } from '../actions'
-import Link from '../components/Link'
+import Button from '../components/Button'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,9 +16,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const ModeLink = connect(
+const ModeButton = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Link)
+)(Button)
 
-export default ModeLink
+export default ModeButton

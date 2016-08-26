@@ -2,19 +2,19 @@ import React from 'react';
 import Alphabet from '../alphabet';
 import './App.css'
 
-const Result = (props) => {
-  const result = props.text.split(/\n+|(\. )/).map((text, index) => <Sentence text={text} key={"sentence_" + index} mode={props.mode}/>)
+const Result = ({text,mode}) => {
+  const result = text.split(/\n+|(\. )/).map((text, index) => <Sentence text={text} key={"sentence_" + index} mode={mode}/>)
   return <div className="Result">{result}</div>
 }
 
-const Sentence = (props) => {
-  const sentence = props.text.split(/([a-zA-Z0-9])/).reduce((prev, value, index, array) => {
+const Sentence = ({text,mode}) => {
+  const sentence = text.split(/([a-zA-Z0-9])/).reduce((prev, value, index, array) => {
     if (value === "") {
       return prev
     } else if (index > 0 && array[index-1].match(/\d/) && value === ".") { // Say "decimal" rather than "stop" following numerics
-      return [...prev, <CodeWord {...Alphabet.decimal} key={"codeword_" + index} mode={props.mode}/>]
+      return [...prev, <CodeWord {...Alphabet.decimal} key={"codeword_" + index} mode={mode}/>]
     } else if (Alphabet.hasOwnProperty(value.toLowerCase())) {
-      return [...prev, <CodeWord {...Alphabet[value.toLowerCase()]} key={"codeword_" + index} mode={props.mode}/>]
+      return [...prev, <CodeWord {...Alphabet[value.toLowerCase()]} key={"codeword_" + index} mode={mode}/>]
     } else {
       return [...prev, <OtherText text={value} key={"text_" + index}/>]
     }

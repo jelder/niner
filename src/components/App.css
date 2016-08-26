@@ -7,10 +7,12 @@
   border-style: none;
   border-color: transparent;
   overflow: auto;
+  padding-bottom: 0;
 }
 
 .Result {
   padding: 1rem;
+  background: #7FDBFF;
 }
 
 .Sentence {
@@ -20,22 +22,17 @@
 
 .CodeWord, .OtherText {
   margin: 0.05rem;
-  padding: 0.2rem;
+  padding: 0.3rem;
   color: #111;
   display: inline-block;
   font-weight: 100;
 }
 
 .CodeWord {
+  background: rgb(0, 31, 63);
+  box-shadow: 3px 3px 2px 1px rgba(0, 31, 63, 0.2);
   font-family: monospace;
   color: #fff;
-}
-
-.CodWord em {
-  font-style: normal;
-  font-variant: small-caps;
-  font-weight: 900;
-  color: red;
 }
 
 .OtherText {
@@ -44,13 +41,24 @@
   text-shadow: 3px 3px 2px rgba(0,0,0,0.5);
 }
 
-/* color */
-
-.Result {
-  background: #7FDBFF;
+button {
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #111;
+  background-color: transparent;
+  user-select: none;
+  border: none;
 }
 
-.CodeWord {
-  background: rgb(0, 31, 63);
-  box-shadow: 3px 3px 2px 1px rgba(0, 31, 63, 0.2);
+button:hover {
+  transform: translateY(0.05rem);
+}
+
+button:active {
+  background-color: #FFDC00;
+}
+
+button:disabled {
+  background-color: #FF851B
 }
