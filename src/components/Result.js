@@ -51,8 +51,9 @@ CodeWord.propTypes = {
   mode: React.PropTypes.string,
 }
 
-const NBSP = "\u00a0"
-const OtherText = (props) => <span className="OtherText">{props.text.replace(/\s/g, NBSP)}</span>
+// const SPACE = "\u00a0"
+const SPACE = '·'
+const OtherText = (props) => <span className="OtherText">{props.text.replace(/\s/g, SPACE)}</span>
 OtherText.PropTypes = { text: React.PropTypes.string.isRequired }
 OtherText.defaultProps = { text: "" }
 
