@@ -3,6 +3,7 @@ import Textarea from 'react-textarea-autosize'
 import './App.css'
 import Result from './Result.js'
 import {changeText} from '../actions'
+import ModeLink from '../containers/ModeLink'
 
 var App = React.createClass({
 
@@ -18,6 +19,16 @@ var App = React.createClass({
           autoCapitalize="sentences"
           placeholder="Type anything. The more phonetically ambiguous, the better!"
           spellCheck={true}/>
+
+        <ModeLink mode="codeword">
+          Code Word
+        </ModeLink>
+        <ModeLink mode="faa">
+          FAA
+        </ModeLink>
+        <ModeLink mode="ipa">
+          IPA
+        </ModeLink>
         <Result key="result" text={store.text} mode={store.mode}/>
 
       </div>

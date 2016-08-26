@@ -4,21 +4,21 @@ import Link from '../components/Link'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    active: ownProps.mode === state.mode
+    active: state.mode === ownProps.mode
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: () => {
-      dispatch(setVisibilityFilter(ownProps.mode))
+      dispatch(setMode(ownProps.mode))
     }
   }
 }
 
-const FilterLink = connect(
+const ModeLink = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Link)
 
-export default FilterLink
+export default ModeLink
