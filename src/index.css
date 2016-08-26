@@ -2,26 +2,34 @@ html {
   font-size: calc(1em + 1vw);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
-}
-
 a, a:hover {
   color: #FF851B
 }
 
 footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
   background-color: #fff;
   text-align: center;
+  padding: 1rem;
+}
+
+body {
+  font-family: sans-serif;
+
+}
+
+/* sticky footer */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin: 0 0 100px; /* bottom = footer height */
+}
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
 }
