@@ -1,14 +1,9 @@
-const samples = [
-"OV-099",
-"202-456-1111 x44",
-"90.9 FM",
-"MAEH09H776",
-]
-
 const default_text = `
 Translate any text to a phonetic alphabet.
 
-${samples[Math.floor(Math.random()*samples.length)]}
+123456789
+abc
+wtf
 `
 
 export const text = (state = default_text, action) => {
