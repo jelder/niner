@@ -31,8 +31,8 @@ var UnconnectedApp = React.createClass({
           <ModeButton mode="ipa">
             IPA
           </ModeButton>
-          <Result key="result" text={text} mode={mode}/>
         </div>
+        <Result key="result" text={text} mode={mode}/>
 
       </div>
     );

@@ -14,40 +14,49 @@
   padding: 1rem;
   background: #7FDBFF;
   min-height: 80vh;
+  padding-bottom: 2rem;
 }
 
 .Sentence {
-  margin: 2rem;
   display: block;
+  margin-bottom: 1rem;
 }
 
+/* top | horizontal | bottom */
+/* top | right | bottom | left */
+
 .CodeWord, .OtherText {
-  margin: 0.05rem;
-  padding: 0.3rem;
+  box-decoration-break: slice;
   color: #111;
   display: inline-block;
   font-weight: 100;
 }
 
 .CodeWord {
+  padding: 0.25rem 0.4rem 0.25rem;
+  margin:  0 0.1rem 0.5rem;
   background: rgb(0, 31, 63);
-  box-shadow: 3px 3px 2px 1px rgba(0, 31, 63, 0.2);
+  box-shadow: 0.25rem 0.25rem 0.2rem 0.05rem rgba(0, 31, 63, 0.2);
   font-family: monospace;
   color: #fff;
 }
 
 .OtherText {
+  margin: 0 0.3rem 0;
   font-family: serif;
   color: transparent;
-  text-shadow: 3px 3px 2px rgba(0,0,0,0.5);
+  text-shadow: 0.25rem 0.25rem 0.2rem rgba(0,0,0,0.5);
 }
 
 .ModeButtons {
+  text-align: center;
   background: #7FDBFF;
-  min-height: 10vh;
 }
 
 button {
+  transform: translateY(-0.11rem);
+  height: 1rem;
+  padding: 0 1rem 0;
   font-family: sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
@@ -55,10 +64,12 @@ button {
   background-color: transparent;
   user-select: none;
   border: none;
+
+
 }
 
 button:hover {
-  transform: translateY(-0.05rem);
+  background-color: #FFDC00;
 }
 
 button:active {

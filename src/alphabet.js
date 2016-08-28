@@ -38,7 +38,7 @@ const alphabet = {
   9: { codeword: "nine",        faa: "<strong>nin</strong> er",           ipa: "/ˈnaɪnər/" },
 
   ".": {codeword: "stop",       faa: "stop",                              ipa: "/ˈstɒp/" },
-  decimal: { codeword: "decimal", faa: "day see mal",                     ipa: "/ˌdeɪˌsiːˈmæl/" },
+  decimal: { codeword: "decimal", faa: "point",                     ipa: "/ˌdeɪˌsiːˈmæl/" },
 };
 
 export default alphabet;
