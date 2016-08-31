@@ -1,6 +1,6 @@
 const default_text = `
 
-Type anything! Convert to phonetics and clearly understood.
+Type anything! Convert to phonetics and be understood.
 
 +1 (234) 567-8999
 OTM
